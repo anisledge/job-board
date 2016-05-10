@@ -1,0 +1,18 @@
+<h1><%= @job.title %></h1>
+<p>Posted on: <%= @job.created_at.strftime("%b %d, %Y") %></p>
+<p><%= @job.employer %></p>
+<p><%= @job.location %></p>
+<h2>Job Summary</h2>
+<p><%= @job.description %></p>
+<h2>Job Requirements</h2>
+<ul>
+<% requirements = @job.requirements.split("-").collect{ |s| s.strip } %>
+<% requirements.each do |item| %>
+  <% if !item.blank? %>
+    <li><%= item %></li>
+  <% end %>
+<% end %>
+</ul>
+<%= link_to "Edit", edit_job_path(@job)%>
+<%= link_to "Delete", @job, method: :delete %>    
+

@@ -1,0 +1,14 @@
+<h1>Open Jobs</h1>
+<table>
+  <% jobs = @jobs.sort_by do |job| %>
+    <% job.created_at %>
+  <% end %>
+  <% jobs.reverse.each do |job| %>
+    <tr>
+	  <td><%= link_to job.title, job_path(job)%></td>
+	  <td><%= job.description %></td>
+	  <td><%= job.location %></td>
+	  <td>Posted <%= distance_of_time_in_words(job.created_at, Time.now) %> ago</td>
+    </tr>
+  <% end %>
+</table>

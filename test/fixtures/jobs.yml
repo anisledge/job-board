@@ -1,0 +1,13 @@
+one: 
+  title: "Test Job"
+  requirements: "Job requirements 1"
+  description: "Job description 1"
+  location: "New York, NY"
+  employer: "Company 1"
+
+two: 
+  title: "Test Job"
+  requirements: "Job requirements 2"
+  description: "Job description 2"
+  location: "New York, NY"
+  employer: "Company 2"
